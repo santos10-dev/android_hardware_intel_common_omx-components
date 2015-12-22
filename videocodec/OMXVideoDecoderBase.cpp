@@ -807,6 +807,10 @@ OMX_ERRORTYPE OMXVideoDecoderBase::HandleFormatChange(void) {
             paramPortDefinitionOutput.format.video.nStride = stride;
             paramPortDefinitionOutput.format.video.nSliceHeight = sliceHeight;
        }
+
+        if (paramPortDefinitionOutput.format.video.nFrameWidth != widthCropped) {
+            paramPortDefinitionOutput.format.video.nFrameWidth = widthCropped;
+        }
     }
 
     paramPortDefinitionOutput.bEnabled = (OMX_BOOL)false;
